@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+}
+
+.container__login {
+    /* background: skyblue; */
+    height: 100%;
+    width: auto;
+    margin: 6% 14%;
+    display: flex;
+    flex-direction: row;
+}
+
+.container__login .heading {
+    max-width: max-content;
+}
+
+.r-logs .heading #logo {
+    color: #1877f2;
+    font-family: 'Titillium Web';
+    font-weight: bolder;
+    font-size: 2.7rem;
+    letter-spacing: -1px;
+}
+
+.r-logs .heading h2 {
+    font-family: arial;
+    font-weight: lighter;
+    font-size: 1.7rem;
+}
+
+.r-logs .heading p {
+    color: rgb(80, 80, 80);
+    font-family: arial;
+    font-size: 0.9rem;
+}
+
+.r-logs .accounts {
+    margin: 7% -2%;
+    display: flex;
+}
+
+.r-logs .accounts .acc {
+    cursor: pointer;
+    position: relative;
+    margin: 0 2%;
+    padding: 5% 5%;
+    background: white;
+    border: 1.5px solid rgb(209, 209, 209);
+    border-radius: 5%;
+    transition: 0.2s ease;
+}
+
+.r-logs .accounts .acc:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.accounts .acc #cross-icon {
+    position: absolute;
+    text-align: center;
+    font-family: verdana;
+    font-size: 0.7rem;
+    padding: 1.6% 4%;
+    margin: 2% 2%;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 100%;
+}
+
+.r-logs .accounts .acc img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.r-logs .accounts .acc #name {
+    padding: 6% 0;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.accounts .acc:nth-child(3) {
+    background: white;
+}
+.accounts .acc:nth-child(3) img {
+    background: #f5f6f7;
+}
+.accounts .acc:nth-child(3) #name {
+    color: #1676f3;
+}
+
+.login {
+    background: white;
+    margin-top: 5%;
+    margin-left: 10%;
+    padding: 1% 2%;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login .input-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.login .input-fields input {
+    height: 2.8rem;
+    margin: 2% 0;
+    font-family: arial;
+    padding: 0 4%;
+    font-size: 1rem;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.login .input-fields input:focus {
+    border: 1px solid #1877f2;
+    box-shadow: 0 0 4px #1876f27a;
+}
+
+.login .input-fields #login {
+    cursor: pointer;
+    margin: 2% 0;
+    background: #1c7af5;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: 3% 0;
+    border: none;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+.input-fields #login:hover {
+    background: #1873eb;
+}
+
+.input-fields p {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-family: arial;
+    color: #1877f2;
+    font-size: 0.8rem;
+    margin: 2% 0;
+}
+.input-fields p::before {
+    content: '';
+    background: rgb(216, 216, 216);
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 210%;
+    left: 0;
+}
+
+#new-acc{
+    cursor: pointer;
+    margin: 8% 0;
+    margin-left: 21%;
+    background: #42b72a;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 4% 6%;
+    border: none;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+
+#new-acc > a {
+    color: white;
+    text-decoration: none;
+}
+
+#new-acc:hover {
+    background: #3aa325;
+}
+
+#new-acc:active {
+    background: #42b72a;
+}
+/* admin */
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.navbar .nav {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+}
+
+.navbar-inverse {
+    background-color: #003300;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #002200;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #003300;
+}
+
+.dropdown-menu {
+    background-color: #006b00;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: #002200;
+}
+
+.navbar-inverse {
+    background-image: none;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-image: none;
+}
+
+.navbar-inverse {
+    border-color: #003300;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: #ffcc00;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #ffcc00;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    color: #ffcc00;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #ffcc00;
+}
+
+.dropdown-menu > li > a {
+    color: #ffffff;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #ffcc00;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+    border-top-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-bottom-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+    border-bottom-color: #ffffff;
+}
+
+/* form */
+#container__form {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
