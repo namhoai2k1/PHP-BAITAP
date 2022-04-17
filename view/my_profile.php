@@ -77,7 +77,7 @@
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./my_profile.php?id=<?php echo $_SESSION['name']; ?>"
+                            <a class="nav-link" href="./my_profile.php?id=<?php echo $_SESSION['name']?>"
                                 >My Profile</a
                             >
                         </li>
@@ -105,44 +105,49 @@
         </nav>
         <div class="container-fluid mt-3">
             <div class="row">
-                <div class="col-md-2"></div>
-                <!-- hien thi cac blogs -->
-                <div class="col-md-8">
-                    <?php
-                        $data = $get_data->getAllBlogs();
-                        foreach ($data as $key => $value) {
-                    ?>
-                    <div class="card mt-3">
-                        <div class="card-header d-flex justify-content-between">
-                            <h3 class="card-author text-uppercase"><?php echo $value['author']; ?></h3>
-                            <p class="card-date text-secondary"><?php echo $value['date']; ?></p>
+                <div class="col-2"></div>
+                <?php 
+                    $info = $get_data->getNameUser($_SESSION['name']);
+                ?>
+                <div class="col-8">
+                    <!-- profile -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>My Profile</h3>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title"><?php echo $value['title']; ?></h3>
-                            <p class="card-text"><?php echo $value['description']; ?></p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="javascript:void(0)" class="btn btn-primary">
-                                <i class="fa fa-thumbs-up"></i>
-                                Like
-                            </a>
-                            <a href="javascript:void(0)" class="btn btn-primary">
-                                <i class="fa fa-thumbs-down"></i>
-                                Dislike
-                            </a>
-                            <a href="javascript:void(0)" class="btn btn-primary">
-                                <i class="fa fa-comment"></i>
-                                Comment
-                            </a>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img
+                                        src="<?php
+                                            if($info['sex'] == 'nam') {
+                                                echo 'https://www.w3schools.com/bootstrap5/img_avatar3.png';
+                                            } else {
+                                                echo 'https://www.w3schools.com/bootstrap5/img_avatar5.png';
+                                            }
+                                        ?>"
+                                        alt=""
+                                        class="img-fluid"
+                                    />
+                                </div>
+                                <div class="col-md-8"></div>
+                                    <h4 class="text-uppercase">
+                                        <?php echo $info['name']; ?>
+                                    </h4>
+                                    <p>
+                                        <strong>Interest: </strong><?php echo $info['interest']; ?>
+                                    </p>
+                                    <p>
+                                        <strong>Address: </strong><?php echo $info['address']; ?>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <?php
-                        }
-                    ?>
-                <div class="col-md-2"></div>
+                </div>
+                <div class="col-2"></div>
             </div>
-        </div>
-        
+        </div>  
     </body>
 </html>
 <?php } ?>

@@ -28,9 +28,9 @@
         <title>Admin</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-sm navbar-dark <?php if($role == 1) { echo 'bg-dark'; } else { echo 'bg-primary'; }?>">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./home.php"><?php echo $_SESSION['name'] .'(ADMIN)'?></a>
+                <a class="navbar-brand" href="./home.php"><?php if($role == 1) {echo $_SESSION['name'] .'(ADMIN)';} else {echo $_SESSION['name'] .'(USER)';} ?></a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -41,6 +41,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
+                    <?php 
+                        if($role == 1) {
+                    ?>
                         <li class="nav-item">             
                             <a class="nav-link" href="#"
                                 >All Blog</a
@@ -56,6 +59,21 @@
                                 >Add Blog</a
                             >
                         </li>
+                    <?php                        
+                    } else { ?> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="./add_blog.php"
+                                >Add Blog</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)"
+                                >See My Blog</a
+                            >
+                        </li>
+                    <?php
+                        }
+                    ?>
                         <li class="nav-item">
                             <a class="nav-link" href="./login.php"
                                 >Logout</a
@@ -80,46 +98,33 @@
                 <div class="col-md-2"></div>
                 <!-- hien thi cac blogs -->
                 <div class="col-md-8">
-                    <div class="card">
+                    <?php
+                        $data = $get_data->getAllBlogsByAuthor($_SESSION['name']);
+                        foreach ($data as $key => $value) {
+                    ?>
+                    <div class="card mb-3">
                         <div class="card-header">
-                            <h4>All User</h4>
+                            <h4 class="card-title">
+                                <?php echo $value['title']; ?>
+                            </h4>
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Password</th>
-                                        <th>Role</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                        $data = $get_data->getAllUser();
-                                        foreach ($data as $key => $value) {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $value['id'] ?></td>
-                                        <td><?php echo $value['name'] ?></td>
-                                        <td><?php echo $value['pass_word'] ?></td>
-                                        <td><?php echo $value['role'] ?></td>
-                                        <td>
-                                            <a href="javascript:void(0)"
-                                                ><i class="fa fa-trash" aria-hidden="true"></i
-                                            ></a>
-                                            <a href="javascript:void(0)"
-                                                ><i class="fa fa-pencil" aria-hidden="true"></i
-                                            ></a>
-                                        </td>
-                                    </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                            <p class="card-text">
+                                <?php echo $value['description']; ?>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="./edit_blog.php?id=<?php echo $value['id']; ?>" class="btn btn-primary">
+                                Edit
+                            </a>
+                            <a href="./delete_blog.php?id=<?php echo $value['id']; ?>" class="btn btn-danger">
+                                Delete
+                            </a>
                         </div>
                     </div>
-                </div>
+                    <?php
+                        }
+                    ?>
                 <div class="col-md-2"></div>
             </div>
         </div>

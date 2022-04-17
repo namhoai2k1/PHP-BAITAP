@@ -73,17 +73,17 @@
                             $_SESSION['role'] = $check_user['role'];
                             header('location: ../view/home.php');
                         }
-                            // // kiem tra role
-                            //// if($check_user['role'] == 1) {
-                            ////     $_SESSION['name'] = $name;
-                            ////     $_SESSION['role'] = $check_user['role'];
-                            // //     echo "<script>window.location.href = './admin.php'</script>";
-                            //// } else {
-                            //     // dang nhap thanh cong
-                            ////     $_SESSION['name'] = $name;
-                            // //    $_SESSION['role'] = $check_user['role'];
-                            ////     echo "<script>window.location.href = './user.php'</script>";
-                            //// }
+                        // // kiem tra role
+                        //// if($check_user['role'] == 1) {
+                        ////     $_SESSION['name'] = $name;
+                        ////     $_SESSION['role'] = $check_user['role'];
+                        // //     echo "<script>window.location.href = './admin.php'</script>";
+                        //// } else {
+                        //    // dang nhap thanh cong
+                        ////     $_SESSION['name'] = $name;
+                        ////    $_SESSION['role'] = $check_user['role'];
+                        ////     echo "<script>window.location.href = './user.php'</script>";
+                        //// }
                     }
                 }
             }

@@ -43,9 +43,10 @@
             rel="stylesheet"
         />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="./style/style.css">
         <title>Create a new account</title>
     </head>
-    <body>
+    <body id="page__add">
         <h2 class="bg-dark text-white text-center p-3">Add new account</h2>
         <div id="container__form" class="container mt-5 p-5 bg-dark text-white text-center" style="max-width: 40vw">
             <form method="post">

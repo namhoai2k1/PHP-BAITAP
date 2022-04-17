@@ -12,6 +12,14 @@ body {
     background: #f0f2f5;
 }
 
+#page__add {
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc53f904-a9d9-4614-b3e1-1bd95f7a550e/da971zr-ef279641-7e8b-4525-91c2-dee8bbb68e3a.jpg/v1/fill/w_1024,h_576,q_75,strp/kintsugi___embrace_damage_by_mau_da971zr-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvYmM1M2Y5MDQtYTlkOS00NjE0LWIzZTEtMWJkOTVmN2E1NTBlXC9kYTk3MXpyLWVmMjc5NjQxLTdlOGItNDUyNS05MWMyLWRlZThiYmI2OGUzYS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.OgSro3wAH4egUIoORZ75nNRYDFtZx36WyYx4B4SVmjs');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
 .container__login {
     /* background: skyblue; */
     height: 100%;
