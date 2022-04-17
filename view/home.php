@@ -45,7 +45,7 @@
                         if($role == 1) {
                     ?>
                         <li class="nav-item">             
-                            <a class="nav-link" href="#"
+                            <a class="nav-link" href="./all_blog.php"
                                 >All Blog</a
                             >
                         </li>
@@ -72,11 +72,6 @@
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./all_blog.php"
-                                >See My Blog</a
-                            >
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="./my_profile.php?id=<?php echo $_SESSION['name']; ?>"
                                 >My Profile</a
                             >
@@ -96,7 +91,7 @@
                             type="text"
                             placeholder="Search"
                         />
-                        <button class="btn btn-primary" type="button">
+                        <button class="btn btn-dark" type="button">
                             Search
                         </button>
                     </form>
@@ -104,6 +99,7 @@
             </div>
         </nav>
         <div class="container-fluid mt-3">
+
             <div class="row">
                 <div class="col-md-2"></div>
                 <!-- hien thi cac blogs -->

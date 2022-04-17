@@ -72,11 +72,6 @@
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./all_blog.php"
-                                >See My Blog</a
-                            >
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="./my_profile.php?id=<?php echo $_SESSION['name']?>"
                                 >My Profile</a
                             >
@@ -96,7 +91,7 @@
                             type="text"
                             placeholder="Search"
                         />
-                        <button class="btn btn-primary" type="button">
+                        <button class="btn btn-dark" type="button">
                             Search
                         </button>
                     </form>
@@ -111,7 +106,7 @@
                 ?>
                 <div class="col-8">
                     <!-- profile -->
-                    <div class="card">
+                    <div class="card border-dark">
                         <div class="card-header">
                             <h3>My Profile</h3>
                         </div>
@@ -130,7 +125,7 @@
                                         class="img-fluid"
                                     />
                                 </div>
-                                <div class="col-md-8"></div>
+                                <div class="col-md-8">
                                     <h4 class="text-uppercase">
                                         <?php echo $info['name']; ?>
                                     </h4>
@@ -143,11 +138,56 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-dark">
+                                Edit
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2"></div>
             </div>
-        </div>  
+        </div> 
+        <!-- title blog -->
+
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <!-- hien thi cac blogs -->
+                <div class="col-md-8">
+                    <div class="alert alert-primary mt-3" role="alert">
+                        <strong>My Blogs</strong>
+                    </div>
+                    <?php
+                        $data = $get_data->getAllBlogsByAuthor($_SESSION['name']);
+                        foreach ($data as $key => $value) {
+                    ?>
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <?php echo $value['title']; ?>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <?php echo $value['description']; ?>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="./edit_blog.php?id=<?php echo $value['id']; ?>" class="btn btn-primary">
+                                Edit
+                            </a>
+                            <a href="./delete_blog.php?id=<?php echo $value['id']; ?>" class="btn btn-danger">
+                                Delete
+                            </a>
+                        </div>
+                    </div>
+                    <?php
+                        }
+                    ?>
+                <div class="col-md-2"></div>
+            </div>
+        </div>     
     </body>
 </html>
 <?php } ?>

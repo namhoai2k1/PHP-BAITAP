@@ -50,13 +50,18 @@
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0)"
+                            <a class="nav-link" href="./admin_all_user.php"
                                 >All User</a
                             >
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./add_blog.php"
                                 >Add Blog</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./my_profile.php?id=<?php echo $_SESSION['name']; ?>"
+                                >My Profile</a
                             >
                         </li>
                     <?php                        
@@ -69,6 +74,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0)"
                                 >See My Blog</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./my_profile.php?id=<?php echo $_SESSION['name']; ?>"
+                                >My Profile</a
                             >
                         </li>
                     <?php
@@ -93,13 +103,18 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid mt-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="alert alert-primary" role="alert">
+                    <strong>Blog of All User</strong>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-2"></div>
                 <!-- hien thi cac blogs -->
                 <div class="col-md-8">
                     <?php
-                        $data = $get_data->getAllBlogsByAuthor($_SESSION['name']);
+                        $data = $get_data->getAllBlogs();
                         foreach ($data as $key => $value) {
                     ?>
                     <div class="card mb-3">
@@ -127,8 +142,7 @@
                     ?>
                 <div class="col-md-2"></div>
             </div>
-        </div>
-        
+        </div>       
     </body>
 </html>
 <?php } ?>
