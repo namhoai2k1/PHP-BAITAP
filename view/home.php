@@ -64,6 +64,11 @@
                                 >Add Blog</a
                             >
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./add_user.php?role=1"
+                                >Add Adim</a
+                            >
+                        </li>
                     <?php                        
                     } else { ?> 
                         <li class="nav-item">
