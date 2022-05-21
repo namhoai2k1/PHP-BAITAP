@@ -45,7 +45,7 @@
                         if($role == 1) {
                     ?>
                         <li class="nav-item">             
-                            <a class="nav-link" href="#"
+                            <a class="nav-link" href="./all_blog.php"
                                 >All Blog</a
                             >
                         </li>
@@ -55,13 +55,18 @@
                             >
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="./my_profile.php?id=<?php echo $_SESSION['name']?>"
+                                >My Profile</a
+                            >
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="./add_blog.php"
                                 >Add Blog</a
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./my_profile.php?id=<?php echo $_SESSION['name']; ?>"
-                                >My Profile</a
+                            <a class="nav-link" href="./add_user.php?role=1"
+                                >Add Adim</a
                             >
                         </li>
                     <?php                        
@@ -135,6 +140,16 @@
                             <a href="./delete_blog.php?id=<?php echo $value['id']; ?>" class="btn btn-danger">
                                 Delete
                             </a>
+                            <!-- them nut duyet -->
+                            <?php if($value['status'] != 1) { ?>
+                                <a href="./accept_blog.php?id=<?php echo $value['id']; ?>" class="btn btn-success">
+                                    Accept
+                                </a>
+                            <?php } else {?>
+                                <a href="./unaccept_blog.php?id=<?php echo $value['id']; ?>" class="btn btn-warning">
+                                    Unaccept
+                                </a>
+                            <?php } ?>
                         </div>
                     </div>
                     <?php

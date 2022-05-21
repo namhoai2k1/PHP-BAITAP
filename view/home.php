@@ -103,8 +103,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid mt-3">
-
+        <div class="container-fluid mt-3"> 
             <div class="row">
                 <div class="col-md-2"></div>
                 <!-- hien thi cac blogs -->
@@ -112,32 +111,34 @@
                     <?php
                         $data = $get_data->getAllBlogs();
                         foreach ($data as $key => $value) {
+                            if($value['status'] == 1) {
                     ?>
-                    <div class="card mt-3">
-                        <div class="card-header d-flex justify-content-between">
-                            <h3 class="card-author text-uppercase"><?php echo $value['author']; ?></h3>
-                            <p class="card-date text-secondary"><?php echo $value['date']; ?></p>
+                        <div class="card mt-3">
+                            <div class="card-header d-flex justify-content-between">
+                                <h3 class="card-author text-uppercase"><?php echo $value['author']; ?></h3>
+                                <p class="card-date text-secondary"><?php echo $value['date']; ?></p>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title"><?php echo $value['title']; ?></h3>
+                                <p class="card-text"><?php echo $value['description']; ?></p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="javascript:void(0)" class="btn btn-primary">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    Like
+                                </a>
+                                <a href="javascript:void(0)" class="btn btn-primary">
+                                    <i class="fa fa-thumbs-down"></i>
+                                    Dislike
+                                </a>
+                                <a href="javascript:void(0)" class="btn btn-primary">
+                                    <i class="fa fa-comment"></i>
+                                    Comment
+                                </a>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h3 class="card-title"><?php echo $value['title']; ?></h3>
-                            <p class="card-text"><?php echo $value['description']; ?></p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="javascript:void(0)" class="btn btn-primary">
-                                <i class="fa fa-thumbs-up"></i>
-                                Like
-                            </a>
-                            <a href="javascript:void(0)" class="btn btn-primary">
-                                <i class="fa fa-thumbs-down"></i>
-                                Dislike
-                            </a>
-                            <a href="javascript:void(0)" class="btn btn-primary">
-                                <i class="fa fa-comment"></i>
-                                Comment
-                            </a>
-                        </div>
-                    </div>
                     <?php
+                            }
                         }
                     ?>
                 <div class="col-md-2"></div>

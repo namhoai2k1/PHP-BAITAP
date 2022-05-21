@@ -81,7 +81,7 @@
                 $title = $_POST['title'];
                 $date = $_POST['date'];
                 $description = $_POST['description'];
-                $get_data->editBlog($id, $title, $date, $description);
+                $get_data->editBlog($id, $title, $description, $date);
                 header('location: ./all_blog.php');
             }
             if (isset($_POST['cancel'])) {

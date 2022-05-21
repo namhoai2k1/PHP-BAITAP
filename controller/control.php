@@ -30,8 +30,8 @@
         // add blogs 
         public function addBlogs($title, $description, $author, $date) {
             global $conn;
-            $sql = "INSERT INTO blog (title, description, author, date)
-            VALUES ('$title', '$description', '$author', '$date')";
+            $sql = "INSERT INTO blog (title, description, author, date, status)
+            VALUES ('$title', '$description', '$author', '$date', 2 )";
             $query = mysqli_query($conn, $sql);
             return $query;
         }
@@ -79,6 +79,19 @@
             $query = mysqli_query($conn, $sql);
             return $query;
         }
-        // get user by name
+        // accept blogs
+        public function acceptBlog($id) {
+            global $conn;
+            $sql = "UPDATE blog SET status = 1 WHERE id = $id";
+            $query = mysqli_query($conn, $sql);
+            return $query;
+        }
+        // unaccept_blog
+        public function unacceptBlog($id) {
+            global $conn;
+            $sql = "UPDATE blog SET status = 2 WHERE id = $id";
+            $query = mysqli_query($conn, $sql);
+            return $query;
+        }
     }
 ?>
